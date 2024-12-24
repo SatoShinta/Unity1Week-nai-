@@ -5,8 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField, Header("playerのリジットボディ")] Rigidbody _playerRB;
     [SerializeField, Header("playerの移動速度")] float _moveSpeed = 1.0f;
-
-    InputSystem_Actions _inputActions;
+    [SerializeField] InputSystem_Actions _inputActions;
     Vector2 _moveInputValue;
 
     void Start()

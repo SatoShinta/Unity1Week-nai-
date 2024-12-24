@@ -19,3 +19,6 @@ MonoBehaviour:
     - userName: ErZonn
       text: Example Comment
       timestamp: 2024-11-01
+  - objID: TestScene_Player_4
+    noteContent: "\u5F8C\u3067\u30E2\u30C7\u30EB\u3092\u5909\u66F4\u3059\u308B"
+    comments: []
