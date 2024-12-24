@@ -58,7 +58,9 @@ namespace Sortify
 
         private void InitializeModuleStatus()
         {
+#pragma warning disable CS0618 // 型またはメンバーが旧型式です
             string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+#pragma warning restore CS0618 // 型またはメンバーが旧型式です
             _isSortifyEnabled = defines.Contains("SORTIFY");
             _isSortifyAttributesEnabled = defines.Contains("SORTIFY_ATTRIBUTES");
             _isSortifyHighlightEnabled = defines.Contains("SORTIFY_HIGHLIGHT");
@@ -192,7 +194,9 @@ namespace Sortify
 
             foreach (var buildTargetGroup in targetGroups)
             {
+#pragma warning disable CS0618 // 型またはメンバーが旧型式です
                 string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
+#pragma warning restore CS0618 // 型またはメンバーが旧型式です
                 HashSet<string> defineSymbols = new HashSet<string>(defines.Split(';'));
 
                 if (_isSortifyEnabled)
@@ -223,7 +227,9 @@ namespace Sortify
                 }
 
                 string updatedDefines = string.Join(";", defineSymbols.Where(s => !string.IsNullOrEmpty(s)).ToArray());
+#pragma warning disable CS0618 // 型またはメンバーが旧型式です
                 PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, updatedDefines);
+#pragma warning restore CS0618 // 型またはメンバーが旧型式です
             }
         }
 
