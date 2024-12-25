@@ -661,6 +661,37 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &774143523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 774143524}
+  m_Layer: 0
+  m_Name: Player kanren
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &774143524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774143523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816947929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,6 +2193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Simple Car_9
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 141c3cc23e644754a970b41bf9080b91, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCar
+      objectReference: {fileID: 0}
     - target: {fileID: 6130756803967273902, guid: 141c3cc23e644754a970b41bf9080b91, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2176,6 +2211,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 141c3cc23e644754a970b41bf9080b91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1866692427}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 141c3cc23e644754a970b41bf9080b91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1866692431}
     - targetCorrespondingSourceObject: {fileID: 7203319670649066843, guid: 141c3cc23e644754a970b41bf9080b91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1097841236}
@@ -2244,7 +2282,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -2283,7 +2321,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -2322,7 +2360,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -2361,7 +2399,7 @@ WheelCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
@@ -3766,7 +3804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1306513489
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4315,6 +4353,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1866692431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866692425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e009f1151669f8645af655ff08205a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _axleInfos:
+  - leftWheel: {fileID: 1097841234}
+    rightWheel: {fileID: 1097841233}
+    motor: 1
+    steering: 1
+  - leftWheel: {fileID: 1097841236}
+    rightWheel: {fileID: 1097841235}
+    motor: 0
+    steering: 0
+  _maxMotorTorque: 300
+  _maxSteeringAngle: 30
 --- !u!43 &2071402497
 Mesh:
   m_ObjectHideFlags: 0
@@ -4489,6 +4550,7 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1609947558}
+  - {fileID: 774143524}
   - {fileID: 1306513491}
   - {fileID: 816947933}
   - {fileID: 1195989932}
