@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField, Header("playerのリジットボディ")] Rigidbody _playerRB;
     [SerializeField, Header("playerの移動速度")] float _moveSpeed = 1.0f;
+    [SerializeField,Header("ブレーキの利き加減")] float _blakePawer = 1.0f;
     [SerializeField] InputSystem_Actions _inputActions;
     Vector2 _moveInputValue;
 
@@ -31,7 +32,19 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _playerRB.AddForce(new Vector3(_moveInputValue.x, 0f, _moveInputValue.y) * _moveSpeed, ForceMode.Force);
+        Vector3 playerVector = new Vector3(_moveInputValue.x, 0f, _moveInputValue.y);
+        _playerRB.AddForce(playerVector * _moveSpeed, ForceMode.Force);
+
+        if(Input.GetKey(KeyCode.S))
+        {
+            Vector3 brakePower = _playerRB.linearVelocity.normalized * _blakePawer;
+            _playerRB.AddForce(brakePower, ForceMode.Force);
+        }
+
+        if(playerVector.sqrMagnitude > 0.1f)
+        {
+            transform.forward = Vector3.Slerp(transform.forward, playerVector, Time.fixedDeltaTime * 1f);
+        }
     }
 
     private void OnDestroy()
