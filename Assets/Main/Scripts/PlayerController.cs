@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 playerVector = new Vector3(_moveInputValue.x, 0f, _moveInputValue.y);
+        Vector3 playerVector = new Vector3(_moveInputValue.x, 0f, _moveInputValue.y).normalized;
         _playerRB.AddForce(playerVector * _moveSpeed, ForceMode.Force);
 
         if(Input.GetKey(KeyCode.S))
