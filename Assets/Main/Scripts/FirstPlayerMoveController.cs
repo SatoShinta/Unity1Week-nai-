@@ -10,7 +10,7 @@ public class FirstPlayerMoveController : MonoBehaviour
     Vector2 _moveInputValue;
     [SerializeField, Header("現在のスピード")] float _nowSpeed = 0f;
     [SerializeField, Header("押すたびに増えるスピード")] float _increaseSpeed = 0.5f;
-    [SerializeField, Header("押すたびに減るスピード")] float _decrecaseSpeed = 0.5f;
+    [SerializeField, Header("徐々に減るスピード")] float _decrecaseSpeed = 0.5f;
     [SerializeField, Header("車に乗ったかどうかのフラグ")] bool isGetInACar = false;
     [SerializeField] float elapsedtime = 0f;
     private void Start()
@@ -38,24 +38,30 @@ public class FirstPlayerMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        SpeedUp();
+        SpeedControl();
         MovePlayer();
     }
 
     /// <summary>
     /// スペースキーを連打しているときは徐々にスピードが増す
+    /// 押していないときは徐々にスピードが減少していく
     /// </summary>
-    void SpeedUp()
+    void SpeedControl()
     {
         elapsedtime += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _nowSpeed += _increaseSpeed;
-            elapsedtime = 0f;
+            // 速度制限を設けた
+            if(_nowSpeed < 15f)
+            {
+                _nowSpeed += _increaseSpeed;
+                elapsedtime = 0f;
+            }
         }
         else
         {
+            // 一定時間スペースキーを押していないと徐々にスピードが落ちていく処理
             if (elapsedtime >= 2f && _nowSpeed > 0f)
             {
                 _nowSpeed -= _decrecaseSpeed;
