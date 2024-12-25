@@ -1965,7 +1965,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1753403794}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.87, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: -0.51, y: -0.66, z: 0}
   m_UseSpring: 0
@@ -1978,12 +1978,12 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
     min: 0
-    max: 0
+    max: 90
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -3407,12 +3407,12 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
     min: 0
-    max: 0
+    max: 90
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -3630,7 +3630,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306513487}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d96d278b1fec79f4d8b049a0b3e94275, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
