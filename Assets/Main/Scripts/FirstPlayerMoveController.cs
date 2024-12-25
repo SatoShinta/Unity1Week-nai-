@@ -67,7 +67,6 @@ public class FirstPlayerMoveController : MonoBehaviour
             }
         }
 
-        //_playerRB.AddForce(new Vector3(_moveInputValue.x, 0f, _nowSpeed), ForceMode.Force);
     }
 
     /// <summary>
