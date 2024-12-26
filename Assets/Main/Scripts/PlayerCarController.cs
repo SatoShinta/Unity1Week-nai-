@@ -8,6 +8,10 @@ public class PlayerCarController : MonoBehaviour
     [SerializeField, Header("ホイールに適用可能な最大トルク")] float _maxMotorTorque;
     [SerializeField, Header("適用可能な最大ハンドル角度")] float _maxSteeringAngle;
     [SerializeField] InputSystem_Actions _inputActions;
+    [SerializeField, Header("現在のスピード")] float _nowSpeed = 0f;
+    [SerializeField, Header("押すたびに増えるスピード")] float _increaseSpeed = 0.5f;
+    [SerializeField, Header("徐々に減るスピード")] float _decrecaseSpeed = 0.5f;
+    [SerializeField, Header("経過時間")] float _elapsedtime = 0f;
     Vector2 _moveInputValue;
 
     void Start()
@@ -23,7 +27,8 @@ public class PlayerCarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float motor = _maxMotorTorque * _moveInputValue.y;
+        SpeedControl();
+        float motor = _nowSpeed;
         float steering = _maxSteeringAngle * _moveInputValue.x;
 
         foreach (var axleInfo in _axleInfos)
@@ -38,8 +43,12 @@ public class PlayerCarController : MonoBehaviour
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
-            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
-            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+            if (!this.gameObject.CompareTag("Player"))
+            {
+                ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+                ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+            }
+            
         }
     }
 
@@ -65,6 +74,41 @@ public class PlayerCarController : MonoBehaviour
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
     }
+
+    /// <summary>
+    /// スペースキーを連打しているときは徐々にスピードが増す
+    /// 押していないときは徐々にスピードが減少していく
+    /// </summary>
+
+    void SpeedControl()
+    {
+        _elapsedtime += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // 速度制限を設けた
+            if (_nowSpeed < _maxMotorTorque)
+            {
+                _nowSpeed += _increaseSpeed;
+                _elapsedtime = 0f;
+            }
+        }
+        else
+        {
+            // 一定時間スペースキーを押していないと徐々にスピードが落ちていく処理
+            if (_elapsedtime >= 1.5f && _nowSpeed > 0f)
+            {
+                _nowSpeed -= _decrecaseSpeed;
+            }
+            else if (_nowSpeed <= 0)
+            {
+                _nowSpeed = 0;
+                _elapsedtime = 0f;
+            }
+        }
+
+    }
+
 
     private void OnDestroy()
     {
