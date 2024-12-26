@@ -817,7 +817,7 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   scriptingDefineSymbols:
-    Android: SORTIFY
+    Android: SORTIFY;CROSS_PLATFORM_INPUT;MOBILE_INPUT
     EmbeddedLinux: SORTIFY
     GameCoreXboxOne: SORTIFY
     Nintendo Switch: SORTIFY
@@ -825,10 +825,11 @@ PlayerSettings:
     PS5: SORTIFY
     QNX: SORTIFY
     ReservedCFE: SORTIFY
-    Standalone: SORTIFY;PROBUILDER_EXPERIMENTAL_FEATURES
+    Standalone: SORTIFY;PROBUILDER_EXPERIMENTAL_FEATURES;CROSS_PLATFORM_INPUT
     VisionOS: SORTIFY
     WebGL: SORTIFY;PROBUILDER_EXPERIMENTAL_FEATURES
     XboxOne: SORTIFY
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     tvOS: SORTIFY
   additionalCompilerArguments: {}
   platformArchitecture: {}
