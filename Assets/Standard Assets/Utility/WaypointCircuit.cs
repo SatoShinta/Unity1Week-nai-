@@ -254,61 +254,65 @@ namespace UnityStandardAssets.Utility.Inspector
             {
                 for (int i = -1; i < items.arraySize; ++i)
                 {
-                    var item = items.GetArrayElementAtIndex(i);
-
-                    float rowX = x;
-                    for (int n = 0; n < props.Length; ++n)
+                    if(i >= 0 && i < items.arraySize)
                     {
-                        float w = widths[n]*inspectorWidth;
+                        var item = items.GetArrayElementAtIndex(i);
 
-                        // Calculate rects
-                        Rect rect = new Rect(rowX, y, w, lineHeight);
-                        rowX += w;
+                        float rowX = x;
+                        for (int n = 0; n < props.Length; ++n)
+                        {
+                            float w = widths[n] * inspectorWidth;
 
-                        if (i == -1)
-                        {
-                            EditorGUI.LabelField(rect, titles[n]);
-                        }
-                        else
-                        {
-                            if (n == 0)
+                            // Calculate rects
+                            Rect rect = new Rect(rowX, y, w, lineHeight);
+                            rowX += w;
+
+                            if (i == -1)
                             {
-                                EditorGUI.ObjectField(rect, item.objectReferenceValue, typeof (Transform), true);
+                                EditorGUI.LabelField(rect, titles[n]);
                             }
                             else
                             {
-                                if (GUI.Button(rect, props[n]))
+                                if (n == 0)
                                 {
-                                    switch (props[n])
+                                    EditorGUI.ObjectField(rect, item.objectReferenceValue, typeof(Transform), true);
+                                }
+                                else
+                                {
+                                    if (GUI.Button(rect, props[n]))
                                     {
-                                        case "-":
-                                            items.DeleteArrayElementAtIndex(i);
-                                            items.DeleteArrayElementAtIndex(i);
-                                            changedLength = true;
-                                            break;
-                                        case "v":
-                                            if (i > 0)
-                                            {
-                                                items.MoveArrayElement(i, i + 1);
-                                            }
-                                            break;
-                                        case "^":
-                                            if (i < items.arraySize - 1)
-                                            {
-                                                items.MoveArrayElement(i, i - 1);
-                                            }
-                                            break;
+                                        switch (props[n])
+                                        {
+                                            case "-":
+                                                items.DeleteArrayElementAtIndex(i);
+                                                items.DeleteArrayElementAtIndex(i);
+                                                changedLength = true;
+                                                break;
+                                            case "v":
+                                                if (i > 0)
+                                                {
+                                                    items.MoveArrayElement(i, i + 1);
+                                                }
+                                                break;
+                                            case "^":
+                                                if (i < items.arraySize - 1)
+                                                {
+                                                    items.MoveArrayElement(i, i - 1);
+                                                }
+                                                break;
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
 
-                    y += lineHeight + spacing;
-                    if (changedLength)
-                    {
-                        break;
+                        y += lineHeight + spacing;
+                        if (changedLength)
+                        {
+                            break;
+                        }
                     }
+                   
                 }
             }
             else
