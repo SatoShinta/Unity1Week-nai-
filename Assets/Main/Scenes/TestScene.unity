@@ -599,6 +599,63 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!1001 &446089592
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.4867935
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0005184114
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -114.369606
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714104781720842905, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563268082044603938, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
+      propertyPath: m_Name
+      value: Robot_green
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d11b03780f97c9c40b06334d1f3fb857, type: 3}
 --- !u!43 &500181645
 Mesh:
   m_ObjectHideFlags: 0
@@ -12432,3 +12489,4 @@ SceneRoots:
   - {fileID: 543450652644400551}
   - {fileID: 2235119331685382447}
   - {fileID: 668072100}
+  - {fileID: 446089592}
