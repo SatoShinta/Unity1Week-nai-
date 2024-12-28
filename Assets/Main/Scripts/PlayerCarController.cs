@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCarController : MonoBehaviour
 {
+    [SerializeField, Header("playerのリジットボディ")] Rigidbody plRigitbody;
     [SerializeField, Header("playerのAnimatorを入れる")] Animator plAnim = null;
     [SerializeField, Header("車軸の情報")] List<AxleInfo> _axleInfos = new List<AxleInfo>();
     [SerializeField, Header("ホイールに適用可能な最大トルク")] float _maxMotorTorque;
@@ -13,16 +14,16 @@ public class PlayerCarController : MonoBehaviour
     [SerializeField, Header("押すたびに増えるスピード")] float _increaseSpeed = 0.5f;
     [SerializeField, Header("徐々に減るスピード")] float _decrecaseSpeed = 0.5f;
     [SerializeField, Header("経過時間")] float _elapsedtime = 0f;
+    float _speed;
+
     Vector2 _moveInputValue;
 
     void Start()
     {
         _inputActions = new InputSystem_Actions();
-
         _inputActions.Player.Move.started += OnMove;
         _inputActions.Player.Move.performed += OnMove;
         _inputActions.Player.Move.canceled += OnMove;
-
         _inputActions.Enable(); // 忘れずに…
     }
 
@@ -57,6 +58,9 @@ public class PlayerCarController : MonoBehaviour
             // アニメーション用に数値の調整
             plAnim?.SetFloat("Blend", _nowSpeed);
         }
+
+        _speed = plRigitbody.linearVelocity.magnitude;
+        Debug.Log(_speed);
     }
 
     /// <summary>
@@ -115,6 +119,8 @@ public class PlayerCarController : MonoBehaviour
         }
 
     }
+
+
 
 
     private void OnDestroy()
