@@ -59,7 +59,7 @@ public class PlayerCarController : MonoBehaviour
             plAnim?.SetFloat("Blend", _nowSpeed);
         }
 
-        _speed = plRigitbody.linearVelocity.magnitude;
+        _speed = plRigitbody.linearVelocity.magnitude * 3.6f;
         Debug.Log(_speed);
     }
 
