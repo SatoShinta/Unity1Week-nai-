@@ -484,8 +484,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19670594, y: 0, z: 0, w: 0.98046255}
-  m_LocalPosition: {x: 0, y: 3.22, z: -118.649994}
+  m_LocalRotation: {x: 0.19484402, y: 0, z: 0, w: 0.98083425}
+  m_LocalPosition: {x: 0, y: 2.7, z: -117.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2927,7 +2927,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81caf0b4f4d2ac74e847cad8de1aa792, type: 2}
+  - {fileID: 2100000, guid: 67b2b5794c80e4e4e86e43cc2e952422, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4898,7 +4898,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81caf0b4f4d2ac74e847cad8de1aa792, type: 2}
+  - {fileID: 2100000, guid: 67b2b5794c80e4e4e86e43cc2e952422, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5185,6 +5185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e009f1151669f8645af655ff08205a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plRigitbody: {fileID: 1306513492}
   plAnim: {fileID: 1668261673}
   _axleInfos:
   - leftWheel: {fileID: 1714176095}
@@ -6544,7 +6545,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81caf0b4f4d2ac74e847cad8de1aa792, type: 2}
+  - {fileID: 2100000, guid: 67b2b5794c80e4e4e86e43cc2e952422, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7989,7 +7990,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81caf0b4f4d2ac74e847cad8de1aa792, type: 2}
+  - {fileID: 2100000, guid: 67b2b5794c80e4e4e86e43cc2e952422, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9334,8 +9335,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741177688}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19670594, y: 0, z: 0, w: 0.98046255}
-  m_LocalPosition: {x: 0, y: 3.22, z: -118.649994}
+  m_LocalRotation: {x: 0.19484402, y: 0, z: 0, w: 0.98083425}
+  m_LocalPosition: {x: 0, y: 2.7, z: -117.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9359,7 +9360,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 0, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 2.22, z: -5.31}
+  FollowOffset: {x: 0, y: 1.7, z: -4.33}
 --- !u!114 &1741177692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9372,7 +9373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LookAtOffset: {x: 0, y: 0, z: 0}
+  LookAtOffset: {x: 0, y: 0, z: -0.22}
 --- !u!1 &1750612365
 GameObject:
   m_ObjectHideFlags: 0
@@ -9468,7 +9469,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 67b2b5794c80e4e4e86e43cc2e952422, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17203,6 +17204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e009f1151669f8645af655ff08205a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plRigitbody: {fileID: 1866692427}
   plAnim: {fileID: 0}
   _axleInfos:
   - leftWheel: {fileID: 659048580}
