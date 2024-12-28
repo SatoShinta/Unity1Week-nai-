@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCarController : MonoBehaviour
 {
-    [SerializeField, Header("playerのAnimatorを入れる")] Animator plAnim;
+    [SerializeField, Header("playerのAnimatorを入れる")] Animator plAnim = null;
     [SerializeField, Header("車軸の情報")] List<AxleInfo> _axleInfos = new List<AxleInfo>();
     [SerializeField, Header("ホイールに適用可能な最大トルク")] float _maxMotorTorque;
     [SerializeField, Header("適用可能な最大ハンドル角度")] float _maxSteeringAngle;
@@ -49,11 +49,14 @@ public class PlayerCarController : MonoBehaviour
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
                 ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             }
-            
+
         }
-        // アニメーション用に数値の調整
-        _nowSpeed = Mathf.Clamp(_nowSpeed, 0f, 1f);
-        plAnim.SetFloat("Blend",_nowSpeed);
+
+        if (plAnim)
+        {
+            // アニメーション用に数値の調整
+            plAnim?.SetFloat("Blend", _nowSpeed);
+        }
     }
 
     /// <summary>
